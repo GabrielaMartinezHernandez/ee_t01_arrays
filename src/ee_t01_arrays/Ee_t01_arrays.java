@@ -1,14 +1,17 @@
 package ee_t01_arrays;
-/*Crear un proyecto llamado:(ee_t01_arrays)
-Este proyecto consistir· en una clase que lea de un archivo,especificado como el primer par·metro de la clase 
+/* author@ Gabriela Mart√¨nez Hernandez
+ * Estrutura de Datos
+ * Crear un proyecto llamado:(ee_t01_arrays)
+Este proyecto consistir√° en una clase que lea de un archivo,especificado como el primer par√°metro de la clase 
 lo siguiente:
 ENTRADA:
 6 1 2 3 4 5 6 
 SALIDA: 
 6 5 4 3 2 1 
-La primer linea es el numero de elementos y las siguientes son los elementos especÌficos
+La primer linea es el numero de elementos y las siguientes son los elementos espec√≠ficos
 Lo anterior meterlo en un array e imprimir en consola el mismo de manera descendente.
-Esto lo subir·n a github con el nombre del repositorio antes mencionado
+Esto lo subir√°n a github con el nombre del repositorio antes mencionado
+tarea 01
 */
 
 import java.util.*;
@@ -17,28 +20,27 @@ public class Ee_t01_arrays {
 	int longitud;
 	int []arreglo;
 	
-	public void leerArchivo(){
-		try{
-			FileReader fr= new FileReader("Documento.txt");
-			BufferedReader br= new BufferedReader(fr);
-			String linea="";
-			longitud=Integer.parseInt(br.readLine());
-			arreglo=new int[longitud];
+	public void leerArchivo(){//se creara el metodo
+		try{// se mete en un bloque try por si genera una excepcion
+			FileReader fr= new FileReader("Documento.txt");// el objeto File recibe la direccion del archivo
+			BufferedReader br= new BufferedReader(fr);//EL buffer lee el archivo
+			String linea="";// guarda el texto que se lee
+			longitud=Integer.parseInt(br.readLine());//Se tiene que hacer uncasting por que recibe Strings y se convertira a enteros
+			arreglo=new int[longitud];// se crea el arreglo
 			
-			for(int i=1; i<=longitud; i++){
-				arreglo[i-1]=1;
+			for(int i=1; i<=longitud; i++){// recorre el arreglo 
+				arreglo[i-1]=i;// al arreglo le resta la primera posicion 
 			}
-			while((linea=br.readLine())!=null){
+			while((linea=br.readLine())!=null){// lee el documento linea por linea hasta que no tenga nada que leer se detiene
 			}
 			for(int j=longitud;j>0; j--){
-				System.out.println(arreglo[j-1]);
+				System.out.println(arreglo[j-1]);// lo imprime en forma inversa
 			}
 					
 			}
 			
-			
-		
-		catch(Exception e){
+					
+		catch(Exception e){//En este bloque se maneja la excepcion
 			
 		System.out.println("El archivo no existe");		
 	}
